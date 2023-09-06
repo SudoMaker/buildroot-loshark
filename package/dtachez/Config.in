@@ -1,0 +1,10 @@
+config BR2_PACKAGE_DTACHEZ
+	bool "dtachez"
+	depends on BR2_INSTALL_LIBSTDCPP
+	help
+	  A fork of dtach that uses pipes instead of Unix sockets.
+
+	  https://github.com/SudoMaker/dtachez
+
+comment "dtachez needs a toolchain w/ C++"
+	depends on !BR2_INSTALL_LIBSTDCPP

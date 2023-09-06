@@ -1,0 +1,10 @@
+config BR2_PACKAGE_JFSUTILS
+	bool "jfsutils"
+	select BR2_PACKAGE_UTIL_LINUX
+	select BR2_PACKAGE_UTIL_LINUX_LIBUUID
+	help
+	  IBM's Journaled File System (JFS) for Linux
+	  JFS Utilities
+	  Version 1.1.15, March 4, 2011
+
+	  Modified to work with uClibc and GCC 12.
