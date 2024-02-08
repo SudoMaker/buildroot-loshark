@@ -8,7 +8,8 @@ umount /mnt
 
 fsck.jfs /dev/mmcblk0p2
 
-mount /dev/mmcblk0p2 /data || exit 2
+mount /dev/mmcblk0p2 /data -o sync || exit 2
+mount /data -o remount,resize
 mkdir -p /data/home
 mkdir -p /data/app
 mount --bind /data/home /root/

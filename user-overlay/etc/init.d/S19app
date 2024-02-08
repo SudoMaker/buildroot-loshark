@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. /etc/profile
+
 start() {
 	printf "Starting app: "
 	start-stop-daemon --start --background --oknodo --quiet --exec /sbin/init-app.sh \

@@ -48,7 +48,7 @@ echo "0xa108" > idVendor
 echo "0x6c73" > idProduct
 
 mkdir -p strings/0x409
-base64 /etc/device_uuid | sed 's/\//,/g' > strings/0x409/serialnumber
+cat /etc/device_uuid > strings/0x409/serialnumber
 echo "SudoMaker" > strings/0x409/manufacturer
 echo "LoShark L1 v2.2" > strings/0x409/product
 
