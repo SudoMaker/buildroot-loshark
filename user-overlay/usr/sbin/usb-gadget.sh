@@ -50,7 +50,11 @@ echo "0x6c73" > idProduct
 mkdir -p strings/0x409
 cat /etc/device_uuid > strings/0x409/serialnumber
 echo "SudoMaker" > strings/0x409/manufacturer
-echo "LoShark L1 v2.2" > strings/0x409/product
+PRODSTR=`cat /proc/cpuinfo|grep machine|tail -c +23`
+if [ -z "$PRODSTR" ]; then
+        PRODSTR="LoShark L1"
+fi
+echo "$PRODSTR" > strings/0x409/product
 
 mkdir -p configs/c.1
 
